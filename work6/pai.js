@@ -1,17 +1,35 @@
-//提取数组中不等于2的数字
-//创建数组
-var arr = [1,2,3,4,2,5,6,2,7,2];
-//显示数组
-document.getElementById('array').innerHTML = arr.toString()
-//index表示新数组newarr的下标，默认为0
-var index = 0,newArr = [];
-//遍历数组
-for(var i in arr){
-    //数组元素不等于2，则将其保存到newarr中
-    if (arr[i]!=2){
-        newArr[index] = arr[i];
-        ++index;
+function calculate(){
+    let num =document.getElementById('num').value
+    num = parseInt(num)&&Number(num)
+    if(!isNaN(num)){
+        document.getElementById('pai').value =pi(num)
     }
 }
-//显示提取后的数组
-document.getElementById('transArray').innerHTML = newArr.toString()
+
+function factorial(n){
+    let sum =1
+    for(let i=1;i<=n;++i){
+        sum *= i
+    }
+    return sum
+}
+
+function oddFactorial(n){
+    let sum = 1
+    for(let i=1;i<=n;++i){
+        sum *= ((2*i)+1)
+    }
+    return sum
+}
+
+function pi(num){
+    let sum =0
+    for(let i=0;i<=num;++i){
+        let dividend = factorial(i)
+        let divisor =oddFactorial(i)
+        sum+=(dividend/divisor)
+    }
+    return sum*2
+}
+
+calculate()
