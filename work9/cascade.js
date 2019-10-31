@@ -104,3 +104,4 @@ collegeSelect.onchange=function(){
         classSelect.options.length=0;
     }
 }
+
