@@ -12,7 +12,7 @@ app.post('/formBuilder',function(req,res){
 
 app.listen(8080,()=>console.log('node express 服务已启动，监听端口：8080'))
 
-const openDfaultBrower=function(url){
+const openDefaultBrower=function(url){
     var exec = require('child_process').exec;
     switch(process.platform){
         case "darwin":
@@ -25,4 +25,4 @@ const openDfaultBrower=function(url){
             exec('xdg-open',[url]);
     }
 }
-openDfaultBrower('http://localhost:8080')
+openDefaultBrower('http://localhost:8080')
