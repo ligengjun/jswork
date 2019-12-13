@@ -10,8 +10,9 @@
     height: 400px;
     position: absolute;
     top: 0;
-    left: 0;
-    cursor: move;
+    left: 360px;
+    border: 1px solid #ccc;
+    overflow: hidden;
     display: none;
 }
 
@@ -34,6 +35,6 @@
     vertical-align: top;
 }
 
-#bigBox img{
+#bigBox img {
     position: absolute;
 }
