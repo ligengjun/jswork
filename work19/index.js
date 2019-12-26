@@ -30,6 +30,6 @@ function disconnect(){
 }
 
 function send(){
-    let msg = document.getElementById('conntent').value
+    let msg = document.getElementById('content').value
     ws.send(msg)
 }

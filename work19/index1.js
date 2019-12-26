@@ -12,8 +12,8 @@ document.getElementById('upload').onclick = function(){
     };
     xhr.onreadystatechange = function(){
         if (xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status <200 || xhr.status >= 300 && xhr.status !==304){
-                throw new Error('文件上传失败，服务器状态异常 ');
+            if(xhr.status <200 || xhr.status >= 300 && xhr.status !== 304) {
+                throw new Error('文件上传失败，服务器状态异常。');
             }
             var name = xhr.responseText;
             if (name == ''){
@@ -21,9 +21,10 @@ document.getElementById('upload').onclick = function(){
             }
             let reg=/^http(s)?:\/\/(.*?)\//
             let downurl = xhr.responseURL.match(reg)[0]+name.slice(2,name.length-1)
-            down.innerHTML = '文件上传成功。<a href=${downurl}>下载文件${downurl}</a>';
+            down.innerHTML = `文件上传成功。<a href=${downurl}>下载文件${downurl}</a>`;
         }
     };
-    xhr.open('POST', 'http://139.9.81.203:8090/upload');
+    //xhr.open('POST', 'http://139.9.81.209:8081/upload');
+    xhr.open('POST', 'http://localhost:8080/upload');
     xhr.send(fd);
-}
+};
