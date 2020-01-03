@@ -289,19 +289,20 @@
                     updateScore: function(score) {
                         this.score.text(score);
                     },
-                    win: function() {
-                        $('#' + this.prefix + '_over_info').htmL('<p>您获胜了</p>');
+                    win: function () {
+                        $('#' + this.prefix + '_over_info').html('<p>您获胜了</p>');
                         $('#' + this.prefix + '_over').removeClass(this.prefix + '-hide');
                     },
-                    over: function(score) {
+                    over: function (score) {
                         $('#' + this.prefix + '_over_info').html('<p>本次得分</p><p>' + score + '</p>');
                         $('#' + this.prefix + '_over').removeClass(this.prefix + '-hide');
                     },
-                    cleanNum: function() {
+                    cleanNum: function () {
                         this.nums = {};
                         $('#' + this.prefix + '_over').addClass(this.prefix + '-hide');
-                        $('.' + this.prefix + '-num' ).remove();
+                        $('.' + this.prefix + '-num').remove();
                     }
                 };
-                window ['Game2048'] = Game2048;
+                window['Game2048'] = Game2048;
+            })(window, document, jQuery);
 })(window, document, jQuery);
